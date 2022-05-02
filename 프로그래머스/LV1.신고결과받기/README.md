@@ -44,6 +44,6 @@ for key, value in dic_report.items():
 또한, 처음에는 신고한 사람들을 key값으로 신고 당한 사람들을 리스트에 넣고 해결했었는데 그보다 신고 당한 사람을 key값으로 신고한 사람들을 리스트에 추가하고  
 그 길이를 판단하면 되는 사고 흐름을 놓쳤다.  
 
-miss point
+**missing points**
   * dictionary 선언
   * key-value 배치
