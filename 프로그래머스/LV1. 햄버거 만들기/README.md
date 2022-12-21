@@ -1,23 +1,30 @@
-# LV1. 신규 아이디 추천
+# LV1. 햄버거 만들기 
 
 #### 문제 설명:
-* id 길은 3 ~ 15
-* 소문자/ 숫자 / - / _ / . 만 가능 
-* 단, .(마침표)는 처음과 끝에 올 수 없고 연속으로 사용할 수 없다
+* 빵 – 야채 – 고기 - 빵 (1,2,3,1) 순서를 찾기 
+
 
 #### 입출력 예시:
-|new_id|result|
+|ingredient|result|
 |-----|------|
-|"...!@BaT#*..y.abcdefghijklm"|"bat.y.abcdefghi"|
+|[2, 1, 1, 2, 3, 1, 2, 3, 1]|2|
 
-#### 7 STEPS:
-Step 1) 대문자 -> 소문자  
-Step 2) 불필요한 특수 문자 제거   
-Step 3) 연속된 마침표가 있으면 1개로 치환  
-Step 4) 처음과 끝의 마침표는 제거  
-Step 5) new_id가 빈 문자열이라면 "a" 대입  
-Step 6) 문자열의 길이가 16 이상이면 그 이후 문자 제거 -> 마침표 조건은 동일  
-Steo 7) new_id의 길이가 3보다 작다면 new_id의 길이가 3이 될떄까지 마지막 문자열을 반복
 
 -------
-* 정규 표현식을 사용 
+``` Python
+for burger in ingredient:
+        stack.append(burger)
+        #print("stack: ",stack)
+        #print(stack[-4:])
+        
+        if stack[-4:] == [1,2,3,1]:
+            answer += 1
+            for i in range(4):
+                stack.pop()
+```
+>  stack이라는 리스트에 ingredient append
+>  만약 뒤에서부터 4개가 [1,2,3,1] 즉, 햄버거를 만들 떄 필요한 재료에 해당한다면, answer의 값을 1 올리고 해당하는 재료들을 pop
+>  이때, for문을 range 4로 for문을 돌려주고 pop 진행
+
+-------
+* 리스트 슬라이싱 활용의 부족 
